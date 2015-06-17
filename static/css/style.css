@@ -83,3 +83,9 @@ code {
     padding-left: 2px;
     padding-right: 2px;
 }
+
+span.entry-date {
+    margin-left: 10px;
+    font-size: small;
+    font-weight: normal;
+}

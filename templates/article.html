@@ -19,14 +19,10 @@
     <header>
     <h2 class="entry-title">
         <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-           title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
+           title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+        <span class="entry-date">{{ article.locale_date }}</span>
+    </h2>
     </header>
-    <footer class="post-info">
-        Published: {{ article.locale_date }}.
-        {% if article.modified %}
-            Last modified: {{ article.locale_modified }}.
-        {% endif %}
-    </footer><!-- /.post-info -->
     <div class="entry-content">
         {{ article.content }}
     </div><!-- /.entry-content -->
