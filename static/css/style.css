@@ -74,6 +74,10 @@ ol#post-list {
     padding: 0;
 }
 
+ol#post-list li article .date {
+    margin-right: 20px;
+}
+
 code {
     background: gainsboro;
     padding-left: 2px;

@@ -4,13 +4,11 @@
 <h2>Recent things:</h2>
 {% endblock %}
 <ol id="post-list">
-{% for article in articles_page.object_list %}
+{% for article in articles %}
     <li><article>
-        <h3 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h3>
-        <p>{{ article.locale_date }}</p>
-        <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
+        <span class="date">{{ article.locale_date }}</span>
+        <span class="title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></span>
     </article></li>
 {% endfor %}
 </ol>
-{% include 'pagination.html' %}
 {% endblock content %}
