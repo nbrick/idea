@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+    {% block head %}
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/style.css" />
+    {% endblock head %}
+</head>
+
+<body>
+    <header id="banner">
+        <h1><a href="{{ SITEURL }}/" {% if page_name == "index" %}class="active"{% endif %}>{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a></h1>
+        <nav><ul>
+        {% for title, link in MENUITEMS %}
+            <li><a href="{{ link }}">{{ title }}</a></li>
+        {% endfor %}
+        {% for p in PAGES %}
+            <li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+        {% endfor %}
+        {% for cat, null in categories %}
+            <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+        {% endfor %}
+        </ul></nav>
+    </header>
+    <section id="content">
+    {% block content %}
+    {% endblock %}
+    </section>
+    <div id="small-bubble"></div><br class="between-bubbles" />
+    <div id="smallest-bubble"></div>
+</body>
+</html>
